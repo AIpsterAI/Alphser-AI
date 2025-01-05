@@ -1,0 +1,28 @@
+AIphser/
+│
+├── README.md               # Project overview and introduction
+├── LICENSE                 # Licensing information (e.g., MIT, Apache 2.0)
+├── .gitignore              # Files and folders to ignore in commits
+├── docs/                   # Documentation, including setup guides
+│   ├── airdrop.md          # Airdrop details and participation guide
+│   ├── roadmap.md          # Project milestones and timeline
+│   └── faq.md              # Frequently asked questions
+│
+├── website/                # Website source code
+│   ├── index.html          # Landing page HTML
+│   ├── styles.css          # Website styles
+│   └── scripts.js          # Interactive JavaScript
+│
+├── ai-meme-generator/      # Code for the AI meme generator
+│   ├── models/             # AI models and configurations
+│   ├── src/                # Source code for the meme generator
+│   └── requirements.txt    # Python dependencies
+│
+├── smart-contracts/        # Smart contract code
+│   ├── contracts/          # Solidity contracts for $AIph
+│   ├── tests/              # Test cases for the smart contracts
+│   └── README.md           # Instructions for deploying the contracts
+│
+└── community/              # Community resources
+    ├── memes/              # A collection of top memes
+    └── contests/           # Meme contest submissions
