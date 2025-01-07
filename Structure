@@ -1,28 +1,34 @@
-AIphser/
-│
-├── README.md               # Project overview and introduction
-├── LICENSE                 # Licensing information (e.g., MIT, Apache 2.0)
-├── .gitignore              # Files and folders to ignore in commits
-├── docs/                   # Documentation, including setup guides
-│   ├── airdrop.md          # Airdrop details and participation guide
-│   ├── roadmap.md          # Project milestones and timeline
-│   └── faq.md              # Frequently asked questions
-│
-├── website/                # Website source code
-│   ├── index.html          # Landing page HTML
-│   ├── styles.css          # Website styles
-│   └── scripts.js          # Interactive JavaScript
-│
-├── ai-meme-generator/      # Code for the AI meme generator
-│   ├── models/             # AI models and configurations
-│   ├── src/                # Source code for the meme generator
-│   └── requirements.txt    # Python dependencies
-│
-├── smart-contracts/        # Smart contract code
-│   ├── contracts/          # Solidity contracts for $AIph
-│   ├── tests/              # Test cases for the smart contracts
-│   └── README.md           # Instructions for deploying the contracts
-│
-└── community/              # Community resources
-    ├── memes/              # A collection of top memes
-    └── contests/           # Meme contest submissions
+// HTML structure setup
+document.body.innerHTML = `
+  <div style="text-align: center; margin: 20px;">
+    <h1>Meme Generator</h1>
+    <label for="topText">Top Text:</label>
+    <input id="topText" type="text" placeholder="Enter top text here..." />
+    <br/><br/>
+    <label for="bottomText">Bottom Text:</label>
+    <input id="bottomText" type="text" placeholder="Enter bottom text here..." />
+    <br/><br/>
+    <label for="imageUpload">Upload Image:</label>
+    <input id="imageUpload" type="file" accept="image/*" />
+    <br/><br/>
+    <button id="generateBtn">Generate Meme</button>
+    <br/><br/>
+    <canvas id="memeCanvas" style="border: 1px solid black;"></canvas>
+  </div>
+`;
+
+// JavaScript functionality
+const canvas = document.getElementById("memeCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = 500;
+canvas.height = 500;
+
+const topTextInput = document.getElementById("topText");
+const bottomTextInput = document.getElementById("bottomText");
+const imageUpload = document.getElementById("imageUpload");
+const generateBtn = document.getElementById("generateBtn");
+
+let uploadedImage = null;
+
+imageUpload.addEventListener("change", (event) => {
+  const file = event.target.files[0];
